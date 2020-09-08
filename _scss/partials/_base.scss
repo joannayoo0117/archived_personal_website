@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -43,9 +44,9 @@ body {
     }
     a,
     strong,
-    .intro,
-    .skills .skillz__category__label,
-    .experience .job__time,
+    .whoami,
+    .skills  //.skillz__category__label,
+    .publication .paper__time,
     .footer__copyright,
     .status {
       color: $off-white;
@@ -54,6 +55,29 @@ body {
       background: $off-white;
     }
   }
+}
+
+h1 {
+  font-size: 24px;
+  a {
+    color: inherit;
+  }
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  margin: 14px 0;
 }
 
 a {
@@ -95,7 +119,7 @@ strong {
 
 .section {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   padding: 100px 170px;
   @include thirteen {
     padding: 100px;
@@ -112,10 +136,11 @@ strong {
   &__title {
     flex-shrink: 0;
     width: 200px;
-    margin-right: 70px;
-    color: $blue;
-    text-transform: uppercase;
-    text-align: right;
+    margin-right: 50px;
+    margin-left: 50px;
+    color: $yellow;
+    text-transform: lowercase;
+    text-align: left;
     font-weight: 700;
     letter-spacing: 2px;
     @include desktop {
@@ -133,7 +158,7 @@ strong {
     font-weight: 300;
     font-size: 1rem;
     width: 100%;
-    max-width: 650px;
+    max-width: 850px;
     @include tablet {
       padding-top: 30px;
       padding-left: 50px;
@@ -173,29 +198,29 @@ strong {
   }
 }
 
-.arrow-link {
-  @include transition;
-  font-weight: 700;
-  display: inline-block;
-  background-color: transparent;
-  white-space: nowrap;
-  &:after {
-    @include transition;
-    position: relative;
-    bottom: 2px;
-    margin-left: 15px;
-    content: '';
-    background: url('../img/arrow.png') no-repeat center;
-    background-size: 100%;
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  &:hover:after {
-    transform: translateX(7px);
-  }
-}
+// .arrow-link {
+//   @include transition;
+//   font-weight: 700;
+//   display: inline-block;
+//   background-color: transparent;
+//   white-space: nowrap;
+//   &:after {
+//     @include transition;
+//     position: relative;
+//     bottom: 2px;
+//     margin-left: 15px;
+//     content: '';
+//     background: url('../img/arrow.png') no-repeat center;
+//     background-size: 100%;
+//     width: 15px;
+//     height: 15px;
+//     display: inline-block;
+//     vertical-align: middle;
+//   }
+//   &:hover:after {
+//     transform: translateX(7px);
+//   }
+// }
 
 .small {
   font-family: 'Inconsolata', monospace;
@@ -247,4 +272,17 @@ strong {
 .in-view {
   opacity: 1;
   transform: translateZ(0);
+}
+
+.highlight-link {
+  @include transition;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  padding: 2px 3px;
+  box-shadow: inset 0 -3px 0 $yellow;
+  &:hover {
+    box-shadow: inset 0 -33px 0 0 $yellow;
+    color: $white;
+  }
 }

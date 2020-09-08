@@ -1,0 +1,40 @@
+I"¼<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Segmentation fault (core dumped)
+</code></pre></div></div>
+
+<p>This <strong>one-liner error</strong> (and no traceback) was all I got while my Tensorflow model crashed in the middle of the run.</p>
+
+<p>This error left me in the dark as all the Stackoverflow solutions didnâ€™t fix it. Furthermore, debugging errors from multithreading or tensorflow alone is already tricky; unknown error from any possible combination of those two could be painful and almost impossible to debug.</p>
+
+<p>I fixed this error somewhat less painfully than I expected with these <strong>four different debuggers</strong>.</p>
+
+<h2 id="1-faulthandler">1. Faulthandler</h2>
+<p><a href="https://docs.python.org/dev/library/faulthandler.html">Faulthandler</a> was the debugger that helped me the most. This is a module that dumps Python tracebacks explicitly. The most helpful feature is that it catches and prints tracebacks of <strong>all the threads</strong> when the error occurs, thus possibly .</p>
+
+<h3 id="how-to-use">How to use</h3>
+<p>Debugging with <code class="language-plaintext highlighter-rouge">faulthandler</code> is very easy. You can import <code class="language-plaintext highlighter-rouge">faulthandler</code> and enable it within your script or run it in CLI.</p>
+
+<h4 id="1-within-the-script">1. Within the script</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">faulthandler</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">faulthandler</span><span class="p">.</span><span class="n">enable</span><span class="p">()</span>
+</code></pre></div></div>
+<h4 id="2-cli">2. CLI</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -X faulthandler {... the rest of the command ...}
+</code></pre></div></div>
+
+<h3 id="outputs">Outputs</h3>
+<p><img src="/img/posts/faulthandler_logs.png" alt="_config.yml" />
+(<em>Note: Some of the error log is redacted for privacy purposes</em>)</p>
+
+<p>I ran the program several times with this debugger and found out that there was a thread that had the same traceback throughout the runs. It turned out that the error was happening at totally unexpected lines! THis debugger helped me nail down <strong>which thread and which line</strong> the error is thrown from.</p>
+
+<p><em>side note :  I wondered why <code class="language-plaintext highlighter-rouge">faulthandler</code> is not run as default in Python since it is so useful, fast and easy to use. But then I came across this <a href="https://stackoverflow.com/questions/21733856/python-is-there-a-downside-to-using-faulthandler">stackoverflow post</a>. Quote on quote: It is not safe to use faulthandler in case a file descriptor stored by faulthandler is replaced</em></p>
+
+<h3 id="documentation">Documentation</h3>
+<p><a href="https://docs.python.org/dev/library/faulthandler.html">https://docs.python.org/dev/library/faulthandler.html</a></p>
+
+<h2 id="2-usrbintime">2. /usr/bin/time</h2>
+
+<p><img src="/images/config.png" alt="_config.yml" /></p>
+:ET
