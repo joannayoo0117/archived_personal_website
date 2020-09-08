@@ -1,7 +1,7 @@
 
 
 // @import "reset";
-@import "globals";
+@import "partials/globals";
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -277,4 +277,4 @@ footer {
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
+@import "partials/highlights";
