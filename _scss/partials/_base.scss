@@ -57,29 +57,6 @@ body {
   }
 }
 
-h1 {
-  font-size: 24px;
-  a {
-    color: inherit;
-  }
-}
-
-h2 {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-p {
-  margin: 14px 0;
-}
-
 a {
   @include transition;
   text-decoration: none;
