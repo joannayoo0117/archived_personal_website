@@ -1,11 +1,12 @@
 .intro {
-  padding: 120px 100px;
-  height: 100vh;
+  padding: 100px 100px;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   max-width: 1440px;
   margin: 0 auto;
+  font-family: $b612;
   @include weird-medium {
     padding: 120px 70px;
   }
@@ -17,7 +18,6 @@
   }
 
   &__hello, &__tagline {
-    font-size: 2.5rem;
     @include desktop {
       font-size: 2.25rem;
     }
@@ -33,6 +33,7 @@
     @include tiny-mobile {
       font-size: 1.4rem;
     }
+    color: $theme;
     .emoji {
       width: 40px;
       height: 40px;
@@ -51,7 +52,26 @@
     }
   }
   &__hello {
+    font-size: 2.5rem;
     font-weight: 300;
+  }
+  &__tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 700px;
+    .name {
+      font-weight: 700;
+    }
+    .technologist {
+      background-image: url('../img/emojis/technologist.png');
+    }
+  }
+  &__contact {
+    font-size: 1.25rem;
+    font-weight: 400;
+    @include phablet {
+      font-size: 1rem;
+    }
     .wave-hand {
       background-image: url('../img/emojis/wave.png');
       margin-left: 10px;
@@ -87,48 +107,6 @@
         to {
           transform: none;
         }
-      }
-    }
-  }
-  &__tagline {
-    font-weight: 300;
-    max-width: 700px;
-    .name {
-      font-weight: 700;
-    }
-    .technologist {
-      background-image: url('../img/emojis/technologist.png');
-    }
-  }
-  &__contact {
-    font-size: 1.25rem;
-    font-weight: 400;
-    @include phablet {
-      font-size: 1rem;
-    }
-    .emoji {
-      &.pointer {
-        background-image: url('../img/emojis/pointright.png');
-        width: 30px;
-        height: 30px;
-        margin: 0 5px;
-        vertical-align: text-bottom;
-        @include phablet {
-          width: 25px;
-          height: 25px;
-        }
-      }
-    }
-    .highlight-link {
-      @include transition;
-      font-weight: 400;
-      text-decoration: none;
-      display: inline-block;
-      padding: 2px 3px;
-      box-shadow: inset 0 -3px 0 $yellow;
-      &:hover {
-        box-shadow: inset 0 -33px 0 0 $yellow;
-        color: $white;
       }
     }
   }

@@ -10,12 +10,16 @@ resume: https://joannayoo0117.github.io/resume.pdf
 social:
   - title: email
     url: mailto:hi@joannayoo.dev
+    name: hi@joannayoo.dev
   - title: twitter
     url: https://twitter.com/_joanna_yoo
+    name: _joanna_yoo
   - title: github
     url: https://github.com/joannayoo0117
+    name: joannayoo0117
   - title: linkedin
     url: https://www.linkedin.com/in/joannayoo
+    name: joannayoo
 
 # Build settings
 markdown: kramdown

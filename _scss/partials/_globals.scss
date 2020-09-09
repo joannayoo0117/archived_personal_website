@@ -11,25 +11,32 @@ $green: #748c61;
 $purple: #64485C;
 $red: #B13D24;
 $orange: #D4963D;
-$yellow: #EEC763;
+$yellow: #EEC763; // F4D06F
 $accent: #EACE32;
 $lavender: #6D7993;
+$cool-grey: #8D94BA;
 $rose: #AC8586;
 $light-green: #C1D28A;
 $light-blue: #76c1ca;
 $marine: #57BC90;
 $paper: #D5D5D5;
 $overcast: #9099A2;
+$dry: #E5D0CC;
+$sky: #C3BFBD;
+$pink: #D8B0A9;
 
 $background: $night;
-$theme: $yellow;
+$theme: $dry;
 // Fonts
-$font-stack: 'Source Sans Pro', system, system-ui, -apple-system,
+
+@import url('https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$font-stack: 'Source Sans Pro', "lucinda bright",  system, system-ui, -apple-system,
   BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-$Apercu: 'Apercu', $font-stack;
+$b612: 'b612', $font-stack;
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
+$korean:  didot, 'Apple SD Gothic Neo', 'NanumBarunGothic', '맑은 고딕', 'Malgun Gothic', '굴림', 'Gulim', '돋움', 'Dotum', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
 // Media queries
 $fifteen-inch: 1440px;

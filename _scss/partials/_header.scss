@@ -6,7 +6,8 @@
     z-index: 100;
     padding: 0 70px;
     background-color: $night;
-
+    font-family: $b612;
+    color: $theme;
     ul{
         margin:0;
         padding:0;
@@ -34,9 +35,7 @@
     }
 
     .nav__log{
-        .logo {
-        background-image: url('../img/logo/logo.png');
-    }
+        font-size: 2.5rem;
     }
 }
 

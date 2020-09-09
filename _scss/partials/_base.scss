@@ -10,7 +10,7 @@ html {
 }
 
 ::selection {
-  background: $yellow;
+  background: $dark-grey;
 }
 
 html,
@@ -21,7 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $white;
   color: $dark-grey;
-  font-family: $Apercu;
+  font-family: $font-stack;
   line-height: 1.5;
   width: 100%;
 
@@ -29,8 +29,8 @@ body {
     background-color: $night;
     color: $slate;
     ::selection {
-      color: $black;
-      background: $yellow;
+      color: $accent;
+      background: $black;
     }
     .switch-wrapper {
       .sun {
@@ -261,5 +261,61 @@ strong {
   &:hover {
     box-shadow: inset 0 -33px 0 0 $theme;
     color: $white;
+  }
+}
+
+.underline-links {
+  @include weird-medium {
+    display: flex;
+    justify-content: center;
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    color: $theme !important;
+    text-transform: lowercase;
+    font-weight: 700;
+    margin: 0 15px;
+    outline: none;
+    @include desktop {
+      margin: 0 10px;
+    }
+    &:after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $theme;
+      content: '';
+      opacity: 0;
+      transition: height 0.3s, opacity 0.3s, transform 0.3s;
+      transform: translateY(-5px);
+      @include little-desktop {
+        display: none;
+      }
+    }
+    &:hover:after,
+    &:focus:after {
+      height: 2px;
+      border-radius: 3px;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    .text {
+      font-size: 0.9rem;
+      display: inline;
+      letter-spacing: 1px;
+      @include little-desktop {
+        display: none;
+      }
+    }
+  }
+  img {
+    display: none;
+    width: 22px;
+    @include little-desktop {
+      display: inline-block;
+    }
   }
 }
